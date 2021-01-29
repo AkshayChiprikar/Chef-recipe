@@ -11,7 +11,7 @@ end
 
 
 execute "My Linux Command" do
-  command << EOH
+  command <<-EOH
   yum install docker -y
   service docker start
   EOH

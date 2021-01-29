@@ -15,3 +15,38 @@ file '/myfile2' do
   group 'root'
 end
 
+user 'Hari' do
+  action :create
+end
+ 
+group "Devops" do
+  action :create
+  members 'Hari'
+  append true
+end
+
+
+user 'Akki'
+group 'AWS'
+package 'wget'
+
+%w(httpd mysql mariadb-server unzip vim).each do |p|
+  package p do
+    action :install
+  end
+end
+
+%w(user1 user2 user3 user4 user5).each do |u|
+  user u do
+    action :create
+  end
+end
+
+
+
+
+
+
+
+
+
